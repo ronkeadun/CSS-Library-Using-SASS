@@ -1,0 +1,90 @@
+@use "sass:math";
+
+$grid-columns: 12;
+$grid-gaps: (
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px
+);
+
+// list of values for justify-content property of a flex-box
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+
+// base layout classes
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+// grid gap classes
+@each $key, $value in $grid-gaps {
+    .gap-#{$key} > * {
+        padding: $value;
+    }
+    .gap-#{$key} {
+        margin-left: -$value;
+        margin-right: -$value;
+    }
+}
+
+// justify content classes
+@each $value in $layout-values {
+    .justify-#{$value} {
+        justify-content: $value;
+    }
+}
+
+// column classes using the breakpoint mixins
+@include xs {
+    @for $x from 1 through $grid-columns {
+        .col-#{$x}-xs {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($x * 100%, $grid-columns);
+        }
+    }
+}
+@include sm {
+    @for $x from 1 through $grid-columns {
+        .col-#{$x}-sm {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($x * 100%, $grid-columns);
+        }
+    }
+}
+@include md {
+    @for $x from 1 through $grid-columns {
+        .col-#{$x}-md {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($x * 100%, $grid-columns);
+        }
+    }
+}
+@include lg {
+    @for $x from 1 through $grid-columns {
+        .col-#{$x}-lg {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($x * 100%, $grid-columns);
+        }
+    }
+}
+@include xl {
+    @for $x from 1 through $grid-columns {
+        .col-#{$x}-xl {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($x * 100%, $grid-columns);
+        }
+    }
+}

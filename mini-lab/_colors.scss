@@ -1,0 +1,49 @@
+//looping through the $colors map
+@each $key, $value in $colors {
+    .text-#{$key}{
+        color: $value;
+    }
+
+    .text-hover-#{$key}{
+        &:hover{
+            color: $value;
+        }
+    }
+
+    .bg-#{$key}{
+        background-color: $value;
+    }
+
+    @if($value != black and $value != white) {
+        //light color variations
+        @for $x from 1 through 5 {
+            .text-#{$key}-light-#{$x} {
+                color: mix(white, $value, $x * 10);
+            }
+            .text-hover-#{$key}-light-#{$x}{
+                &:hover{
+                    color: mix(white, $value, $x * 10);
+                }
+            }
+            .bg-#{$key}-light-#{$x}{
+                background-color: mix(white, $value, $x * 10);
+            }
+        }
+
+        //dark color variations
+        @for $x from 1 through 5 {
+            .text-#{$key}-dark-#{$x}{
+                color: mix(black, $value, $x * 10);
+            }
+            .text-hover-#{$key}-dark-#{$x}{
+                &:hover{
+                    color: mix(black,$value,$x*10);
+                }
+            }
+            .bg-#{$key}-dark-#{$x}{
+                background-color: mix(black, $value, $x * 10);
+            }
+        }
+    }
+
+}

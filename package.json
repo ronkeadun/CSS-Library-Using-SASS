@@ -1,0 +1,28 @@
+{
+  "name": "CSS-Library-Using-SASS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronkeadun/CSS-Library-Using-SASS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronkeadun/CSS-Library-Using-SASS/issues"
+  },
+  "homepage": "https://github.com/ronkeadun/CSS-Library-Using-SASS#readme",
+  "devDependencies": {
+    "@types/gulp": "^4.0.17",
+    "gulp": "^4.0.2",
+    "gulp-purgecss": "^6.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.72.0"
+  }
+}
